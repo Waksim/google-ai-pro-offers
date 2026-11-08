@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="color-scheme" content="light">
+  <title>Предложения Google AI Pro</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      width: 372px;
+      margin: 0;
+      padding: 16px 18px 14px;
+      background: linear-gradient(165deg, #edf2ff, #f8faff 180px);
+      color: #1e2c46;
+      font: 13px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    h1 { margin: 0 0 4px; font-size: 20px; font-weight: 700; }
+    .intro { margin: 0 0 12px; color: #485976; }
+    form { margin: 0; }
+    fieldset {
+      min-width: 0;
+      margin: 0;
+      padding: 6px 8px 8px;
+      border: 1px solid #dce4f3;
+      border-radius: 12px;
+      background: #fff;
+    }
+    legend { padding: 0 5px; font-weight: 650; }
+    label {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      min-height: 34px;
+      padding: 6px 8px;
+      border: 1px solid transparent;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    label:hover { background: #f3f6ff; }
+    label:has(input:checked) {
+      color: #1e469c;
+      background: #edf2ff;
+      border-color: #cdd9f8;
+    }
+    label:has(input:disabled) { cursor: default; color: #66748a; }
+    input { width: 16px; height: 16px; margin: 0; accent-color: #315aca; }
+    label:has(input:focus-visible), button:focus-visible, a:focus-visible {
+      outline: 2px solid #315aca;
+      outline-offset: 2px;
+    }
+    .addon { margin-top: 7px; border-top-color: #dce4f3; }
+    button {
+      width: 100%;
+      min-height: 38px;
+      margin-top: 12px;
+      padding: 7px 12px;
+      border: 0;
+      border-radius: 8px;
+      background: #315aca;
+      color: #fff;
+      font: inherit;
+      font-weight: 650;
+      cursor: pointer;
+    }
+    button:hover:enabled { background: #274bae; }
+    button:disabled { background: #6d7a95; cursor: default; }
+    #status {
+      min-height: 38px;
+      margin: 9px 0 0;
+      padding: 8px 10px;
+      background: #eaf0fa;
+      border-radius: 8px;
+      overflow-wrap: anywhere;
+    }
+    #status[data-tone="ready"] { background: #e5f4eb; color: #205b3a; }
+    #status[data-tone="pending"] { background: #fff4df; color: #75501c; }
+    #status[data-tone="error"] { background: #fff0ed; color: #8a2d22; }
+    .hint { margin: 9px 0 0; color: #485976; font-size: 12px; }
+    .route {
+      margin-top: 10px;
+      padding-top: 8px;
+      border-top: 1px solid #dce4f3;
+      font-size: 12px;
+    }
+    .route ol { margin: 0 0 8px; padding-left: 19px; }
+    .route li + li { margin-top: 2px; }
+    .route a { color: #254cae; }
+    .route .subscriptions {
+      display: block;
+      padding: 6px 10px;
+      border: 1px solid #bcccf3;
+      border-radius: 8px;
+      background: #edf2ff;
+      font-weight: 650;
+      text-align: center;
+      text-decoration: none;
+    }
+    .route .subscriptions:hover { background: #e0e9ff; }
+    .route .hint { margin-top: 5px; }
+  </style>
+</head>
+<body>
+  <h1>Промопредложения</h1>
+  <p class="intro" id="offer-help">Выбери один вариант AI Pro. YouTube — отдельно.</p>
+
+  <form id="settings">
+    <fieldset id="options" aria-describedby="offer-help" disabled>
+      <legend>Google AI Pro</legend>
+      <label><input type="checkbox" name="offer" value="12m" data-label="12 месяцев"> 12 месяцев</label>
+      <label><input type="checkbox" name="offer" value="6m_ss" data-label="6 месяцев · SS"> 6 месяцев · SS</label>
+      <label><input type="checkbox" name="offer" value="6m" data-label="6 месяцев"> 6 месяцев</label>
+      <label><input type="checkbox" name="offer" value="6m_2" data-label="6 месяцев · вариант 2"> 6 месяцев · вариант 2</label>
+      <label class="addon"><input id="youtube" type="checkbox" disabled> YouTube Premium</label>
+    </fieldset>
+    <button id="apply" type="submit" disabled>Применить</button>
+  </form>
+
+  <p id="status" role="status" aria-live="polite">Загрузка настроек…</p>
+  <p class="hint">Для отключения сними галочки и нажми «Применить».</p>
+  <nav class="route" aria-label="Порядок оформления">
+    <ol>
+      <li>Открой <a href="https://one.google.com/changestorageplan" target="_blank" rel="noopener noreferrer">«Сменить план»</a> в Google One.</li>
+      <li>Выбери вариант, нажми «Применить» и сверь заказ.</li>
+      <li>После оформления проверь срок и автопродление.</li>
+    </ol>
+    <a class="subscriptions" href="https://play.google.com/store/account/subscriptions" target="_blank" rel="noopener noreferrer">Перейти к подпискам Google Play</a>
+    <p class="hint">Для дополнения — <a href="https://www.youtube.com/paid_memberships" target="_blank" rel="noopener noreferrer">подписки YouTube</a>.</p>
+  </nav>
+  <script src="popup.js"></script>
+</body>
+</html>
