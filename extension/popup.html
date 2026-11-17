@@ -48,6 +48,7 @@
       outline: 2px solid #315aca;
       outline-offset: 2px;
     }
+    .offer-list { max-height: 120px; overflow-y: auto; }
     .addon { margin-top: 7px; border-top-color: #dce4f3; }
     button {
       width: 100%;
@@ -101,15 +102,25 @@
 </head>
 <body>
   <h1>Промопредложения</h1>
-  <p class="intro" id="offer-help">Выбери один вариант AI Pro. YouTube — отдельно.</p>
+  <p class="intro" id="offer-help">Выбери предложение. Прокрути список ↓</p>
 
   <form id="settings">
     <fieldset id="options" aria-describedby="offer-help" disabled>
-      <legend>Google AI Pro</legend>
+      <legend>Предложение Google One</legend>
+      <div class="offer-list">
       <label><input type="checkbox" name="offer" value="12m" data-label="12 месяцев"> 12 месяцев</label>
       <label><input type="checkbox" name="offer" value="6m_ss" data-label="6 месяцев · SS"> 6 месяцев · SS</label>
       <label><input type="checkbox" name="offer" value="6m" data-label="6 месяцев"> 6 месяцев</label>
       <label><input type="checkbox" name="offer" value="6m_2" data-label="6 месяцев · вариант 2"> 6 месяцев · вариант 2</label>
+        <label><input type="checkbox" name="offer" value="ultra20tb_12m" data-label="20 ТБ · 12 мес."> 20 ТБ · 12 мес.</label>
+        <label><input type="checkbox" name="offer" value="ultra20tb_6m" data-label="20 ТБ · 6 мес."> 20 ТБ · 6 мес.</label>
+        <label><input type="checkbox" name="offer" value="ultra20tb_3m" data-label="20 ТБ · 3 мес."> 20 ТБ · 3 мес.</label>
+        <label><input type="checkbox" name="offer" value="ultra20tb_1m" data-label="20 ТБ · 1 мес."> 20 ТБ · 1 мес.</label>
+        <label><input type="checkbox" name="offer" value="ultra30tb_12m" data-label="30 ТБ · 12 мес."> 30 ТБ · 12 мес.</label>
+        <label><input type="checkbox" name="offer" value="ultra30tb_6m" data-label="30 ТБ · 6 мес."> 30 ТБ · 6 мес.</label>
+        <label><input type="checkbox" name="offer" value="ultra30tb_3m" data-label="30 ТБ · 3 мес."> 30 ТБ · 3 мес.</label>
+        <label><input type="checkbox" name="offer" value="ultra30tb_1m" data-label="30 ТБ · 1 мес."> 30 ТБ · 1 мес.</label>
+      </div>
       <label class="addon"><input id="youtube" type="checkbox" disabled> YouTube Premium</label>
     </fieldset>
     <button id="apply" type="submit" disabled>Применить</button>

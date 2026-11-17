@@ -11,12 +11,39 @@
     "6m": "AVbCH/fUON3w8hpfeutprA3BMQwrBwYIB6Y8CSWi1isDCDswKUUhGQ3dluj5WXsNKOvr8K5UULBGrRsf4KlW1rHLz0fF3SvxQhBFRbBOHCA=",
     "6m_2": "AVbCH/cJ5SeHgkVRt+bdcrapx/aLSu2kbsBgMdI413zbllDNsNQoC/zVlG/Npbu55WlMzBwWPhUedIvZFDg7fw0CmCv/8DKj04IZ21pK7mrV/hh5"
   };
+  TOKENS["ultra20tb_12m"] = "AYrTWi65Jbm3KRubLXLLA3Re29zKibSnRbvAJEPfxEIVs/d57w8vEhsU7hSkSAfGyjZH8B7/5aj5UTlidbsEwUH8aPN2RTA6pKiltA==";
+  TOKENS["ultra20tb_6m"] = "AYrTWi6lMoHTB2cVb1VC+i3DHvfp1Q9VGblBeF9b1+O8e5+kNws87YdcgNEUJOuHJDp/mitKx1KmBCYurbXIubpM50o4AqgcBB3gMGk85mQ=";
+  TOKENS["ultra20tb_3m"] = "AYrTWi6sldhCH+REVXA3inXWB+LuAvtnSPYHMvhbqKmv3TRdQPhoynS4ZTLxPEiaNGnaAmDTqliYzrLwJ3Aq49Vi9ktjNP+xcTF5R9Yn1MQ=";
+  TOKENS["ultra20tb_1m"] = "AYrTWi5QWD5gc0ZxMJHAAUvXbYRFJgI6w5vnF9PKIFg1DFQML36iijrmN5Vum7u9ty2JnHvt9JFLgsfGKwScJcfZaKttqn0hSX4Fnpdn9No=";
+  TOKENS["ultra30tb_12m"] = "AYrTWi51Eo3HG0tq1J6SYr4u3FDCCxb6xSEEWHskaFwSA7Vn4y+Lfqlfy+Lbkx2T/xPi4uCRB71ZIn+weD0kHZsMgS6ogUiZ8hG9SA==";
+  TOKENS["ultra30tb_6m"] = "AYrTWi5hXUkLGa1e7nBstxl4Z3cUcYWzHF38Xks304ClJj8yVxeFCwDg/pJg82w8w9xHsk8Wl5WNhYKk26LB9besC0kYJ6AvlXapJA==";
+  TOKENS["ultra30tb_3m"] = "AYrTWi4iJ8AzqZkDL53g/dcS7g93mZgiEBJANI0lOucBiUITWEYqCiwLsIXY7P62rmMWb+wFR4WW9tQlFrskR67oCzzwVHghPSs29w==";
+  TOKENS["ultra30tb_1m"] = "AYrTWi7nBQ2Zn0z4s+QJOwg9kQRwH3+z+HXpzRqw9IIU4/C48vPvjH32Bub8SHrWq3YX+yI4g1wJgviYiLCobJNqc9DqRd9WZnDdaQ==";
   const YT_FREE_TOK = "AVbCH/eW4Nfp8KBl0zlm7x9PhaiCvpnqwUuL2D8NFPBQgmM9+HuYS1h2xH5lLWU/BsBj775LK5GqK8UHKqoSzhDDz+PqP3paNesqLU0r9i6XCrYa";
   const LABELS = {
     "12m": "12 месяцев",
     "6m_ss": "6 месяцев · SS",
     "6m": "6 месяцев",
     "6m_2": "6 месяцев · вариант 2"
+  };
+
+  LABELS["ultra20tb_12m"] = "20 ТБ · 12 мес.";
+  LABELS["ultra20tb_6m"] = "20 ТБ · 6 мес.";
+  LABELS["ultra20tb_3m"] = "20 ТБ · 3 мес.";
+  LABELS["ultra20tb_1m"] = "20 ТБ · 1 мес.";
+  LABELS["ultra30tb_12m"] = "30 ТБ · 12 мес.";
+  LABELS["ultra30tb_6m"] = "30 ТБ · 6 мес.";
+  LABELS["ultra30tb_3m"] = "30 ТБ · 3 мес.";
+  LABELS["ultra30tb_1m"] = "30 ТБ · 1 мес.";
+  const OFFER_SKUS = {
+    "ultra20tb_12m": "g1.play.20tb",
+    "ultra20tb_6m": "g1.play.20tb",
+    "ultra20tb_3m": "g1.play.20tb",
+    "ultra20tb_1m": "g1.play.20tb",
+    "ultra30tb_12m": "g1.play.ai.pro",
+    "ultra30tb_6m": "g1.play.ai.pro",
+    "ultra30tb_3m": "g1.play.ai.pro",
+    "ultra30tb_1m": "g1.play.ai.pro",
   };
 
   let currentTest = null;
@@ -28,7 +55,7 @@
 
     const youtube = config.youtube === true;
     const fullItems = [
-      [[PREFIX + "g1.2tb.ai.subs_variant", 21], null, null, null, 1, [TOKENS[layer]]]
+      [[PREFIX + (OFFER_SKUS[layer] || "g1.2tb.ai.subs_variant"), 21], null, null, null, 1, [TOKENS[layer]]]
     ];
     if (youtube) {
       fullItems.push(

@@ -1,9 +1,11 @@
 {
   "manifest_version": 3,
   "name": "Google AI Pro · Предложения",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "description": "Выбор предложения Google AI Pro и дополнения YouTube Premium при оформлении.",
-  "permissions": ["storage"],
+  "permissions": [
+    "storage"
+  ],
   "host_permissions": [
     "https://one.google.com/*",
     "https://tokenized.play.google.com/*",
@@ -20,21 +22,33 @@
   },
   "content_scripts": [
     {
-      "matches": ["https://one.google.com/*"],
-      "js": ["content.js"],
+      "matches": [
+        "https://one.google.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
       "run_at": "document_start",
       "all_frames": false
     },
     {
-      "matches": ["https://one.google.com/*"],
-      "js": ["inject.js"],
+      "matches": [
+        "https://one.google.com/*"
+      ],
+      "js": [
+        "inject.js"
+      ],
       "run_at": "document_start",
       "world": "MAIN",
       "all_frames": false
     },
     {
-      "matches": ["https://tokenized.play.google.com/*"],
-      "js": ["play_guard.js"],
+      "matches": [
+        "https://tokenized.play.google.com/*"
+      ],
+      "js": [
+        "play_guard.js"
+      ],
       "run_at": "document_idle",
       "all_frames": true
     }
